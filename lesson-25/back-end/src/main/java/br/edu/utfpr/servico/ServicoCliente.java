@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import br.edu.utfpr.excecao.NomeClienteMenor5CaracteresException;
+
 
 
 import br.edu.utfpr.dto.ClienteDTO;
@@ -77,7 +79,7 @@ public class ServicoCliente {
             try{
                 cli.setNome(cliente.getNome());
 
-            }catch (Exception e){
+            }catch (NomeClienteMenor5CaracteresException  e){
                 e.printStackTrace();
             }
             cli.setIdade(cliente.getIdade());
